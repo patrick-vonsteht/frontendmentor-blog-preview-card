@@ -1,0 +1,105 @@
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray500: hsl(0, 0%, 42%);
+  --gray950: hsl(0, 0%, 7%);
+
+  /** https://fluid.style/ for calculating the clamp expressions */
+  --font-larger-extrabold: 800 clamp(1.25rem, 1.136rem + 0.303vw, 1.5rem) "Figtree";
+  --font-medium-normal: 400 clamp(0.875rem, 0.818rem + 0.152vw, 1rem) "Figtree", sans-serif;
+  --font-smaller-normal: 400 clamp(0.75rem, 0.693rem + 0.152vw, 0.875rem) "Figtree", sans-serif;
+  --font-smaller-extrabold: 800 clamp(0.75rem, 0.693rem + 0.152vw, 0.875rem) "Figtree", sans-serif;
+}
+
+body {
+  font: var(--font-medium-normal);
+  color: var(--gray950);
+
+  background-color: var(--yellow);
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+main {
+  background-color: var(--white);
+  border: 1px solid var(--gray950);
+  border-radius: 20px;
+  box-shadow: 5px 5px var(--gray950);
+
+  max-width: 350px;
+  padding: 1em;
+  margin: 1em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.thumbnail {
+  border-radius: 10px;
+
+  margin-bottom: 1.5rem;
+
+  order: -3;
+}
+
+.tag {
+  font: var(--font-smaller-extrabold);
+
+  background-color: var(--yellow);
+  border-radius: 5px;
+
+  padding: 0.5em 0.75em;
+  margin-bottom: 0.75rem;
+
+  order: -2;
+}
+
+.date {
+  font: var(--font-smaller-normal);
+
+  margin-bottom: 0.75rem;
+
+  order: -1;
+}
+
+h1 {
+  font: var(--font-larger-extrabold);
+
+  margin-bottom: 0.75rem;
+}
+
+a:hover,
+a:focus {
+  color: var(--yellow)
+}
+
+.teaser {
+  font: var(--font-medium-normal);
+
+  margin-bottom: 1.5rem;
+}
+
+.author {
+  font: var(--font-smaller-extrabold);
+
+  position: relative;
+
+  padding-left: calc(32px + 0.75em);
+  margin-bottom: 0.75rem;
+}
+
+.author::before {
+  content: "";
+
+  background-image: url("assets/images/image-avatar.webp");
+  background-size: cover;
+
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  left: 0px;
+  top: calc(0.5 * (0.875rem - 32px));
+}
